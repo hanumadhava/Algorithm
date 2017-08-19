@@ -17,10 +17,10 @@ public class Largest {
         num.trim();
         input=Long.valueOf(num).longValue();
         for(curr=0,max=0;input<0;input/=10)
-            if (max < num[i]) {
+            /*if (max < num) {
                 max = curr;
                 l += max;
-            }
+            }*/
         System.out.println(l);
     }
 }

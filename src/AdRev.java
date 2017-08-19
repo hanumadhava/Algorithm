@@ -11,22 +11,7 @@ public class AdRev
         long result = 0;
         Arrays.sort(a);
         Arrays.sort(b);
-/*        for (i = 0; i < a.length; i++)
-            System.out.println(a[i]);
 
-        for (i = 0; i < a.length; i++)
-            System.out.println(b[i]);
-
-        long result = 0, max;
-        for (i = 0; i < a.length; i++)
-        {
-            max=a[i] * b[i];
-            for(j=i;j<b.length;j++)
-            if(a[i]*b[j]>max)
-                max = a[i] * b[j];
-            result += max;
-        }
-*/
         for (i = 0; i < a.length; i++) {
             result += a[i] * b[i];  // Casting one to long to handle large ints
         }
