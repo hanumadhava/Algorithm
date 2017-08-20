@@ -3,24 +3,40 @@ import java.util.*;
 import java.io.*;
 
 public class MajorityElement {
-    private static long getMajorityElement(long[] a) {
-        if (a.length==1) {
+    private static long getMajorityElement(long[] a, int left, int right) {
+        if (a.length==1)
             return -1;
-        }
+
+        if (left == right)
+            return -1;
+
+        if (left + 1 == right)
+            return a[left];
         //write your code here
-        int count=0,i=0;
-        long curr, c[a.length];
-        c[] = new long[a.length];
+        int count=1,i=0,ind=0;
+
+        while (i<a.length) {
+            if (a[ind] == a[i])
+                count++;
+            else
+                count--;
+            if (count == 0) {
+                ind = i;
+                count = 1;
+            }
+            i++;
+        }
+        i=0; count=0;
         while (i<a.length)
         {
-            curr=a[i];
-            c[i]=0;
-            if(curr==a[i])
-                c[i];
-
-            if(count > a.length/2)
-                return count;
+            if(a[i]==a[ind])
+                count++;
+            i++;
         }
+
+        if(count > a.length/2)
+            return a[ind];
+
         return -1;
     }
 
@@ -33,7 +49,7 @@ public class MajorityElement {
         }
         Arrays.sort(a);
 
-        if (getMajorityElement(a) != -1) {
+        if (getMajorityElement(a,0,a.length) != -1) {
             System.out.println(1);
         } else {
             System.out.println(0);
