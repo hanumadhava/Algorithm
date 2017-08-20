@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Knapsack {
-    static int optimalWeight_Repetition(int W, int[] w, int[] v) {
+    /*static int optimalWeight_Repetition(int W, int[] w, int[] v) {
         // bottom-up from each smaller weight W.
         int[] table = new int[W + 1];
         for(int weight = 1; weight <= W; weight++) {
@@ -12,7 +12,7 @@ public class Knapsack {
             }
         }
         return table[W];
-    }
+    } */
 
     static int optimalWeight_NoRepetition(int W, int[] w, int[] v) {
         // bottom-up from all combinations of smaller item i and weight
@@ -71,12 +71,13 @@ public class Knapsack {
         for (int i = 0; i < n; i++) {
             w[i] = scanner.nextInt();
         }
+        
         for (int i = 0; i < n; i++) {
             v[i] = scanner.nextInt();
         }
-        System.out.println(optimalWeight_Repetition(W, w, v));
+      //  System.out.println(optimalWeight_Repetition(W, w, v));
         System.out.println(optimalWeight_NoRepetition(W, w, v));
-        System.out.println(optimalWeight(W, w));
+        //System.out.println(optimalWeight(W, w));
         scanner.close();
     }
 }
